@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
     return json.dumps(
         {
-            'name': 'Hello World',
+            'name': 'Hello World!',
             'email': 'hello@world.com'
         }
     )

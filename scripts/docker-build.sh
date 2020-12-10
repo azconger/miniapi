@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-IMAGE=zconger/miniapi
+IMAGE="${1:-zconger/miniapi}"
 VERSION=$(cat ./VERSION)
 
 docker build . -t "${IMAGE}"
