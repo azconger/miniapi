@@ -1,0 +1,4 @@
+app:
+  applicationId: 9e3a5594-0ec8-40f4-8ec7-48ef4442b767
+  host: ${APP_HOST:http://miniapi.dev:5000}
+  env: ${APP_ENV:Development}
