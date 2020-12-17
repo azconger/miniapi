@@ -27,5 +27,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Run MiniAPI
         run: docker run --detach --publish 5000:5000 $IMAGE_NAME
+      - name: Wait for MiniAPI
+        run: while ! curl -s -o /dev/null $APP_HOST; do echo Waiting for app; sleep 1; done
       - name: Run HawkScan
-        run: docker run --tty --volume $(pwd):/hawk --rm --env API_KEY --env APP_HOST stackhawk/hawkscan
+        run: docker run --tty --volume $(pwd):/hawk --env API_KEY --env APP_HOST stackhawk/hawkscan
