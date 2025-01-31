@@ -30,7 +30,6 @@ jobs:
 #      - name: Run HawkScan
 #        run: docker run --tty --volume $(pwd):/hawk --env API_KEY --env APP_HOST --network host stackhawk/hawkscan
       - name: Run HawkScan Action
-        uses: stackhawk/hawkscan-action@v1.0.1
+        uses: stackhawk/hawkscan-action@v2
         with:
           apiKey: ${{ secrets.HAWK_API_KEY }}
-          environmentVariables: APP_HOST, SHAWK_RESULTS_ENDPOINT, SHAWK_AUTH_ENDPOINT
